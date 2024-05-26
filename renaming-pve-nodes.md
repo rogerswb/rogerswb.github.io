@@ -1,4 +1,5 @@
 ## Renaming Proxmox VE Nodes
+
 I recently set up a dedicated server so I could run Proxmox to host a few different applications for myself. It's the first one I've ever rented, and in my eagerness to start using it, I didn't think about renaming the server within Proxmox right away, assuming there is a setting somewhere, and I started creating VMs and containers. The installation was provided by the company I rented the server from, and they directly imaged it without any configuration input, so the hostname assigned was the default of `pvehost`. I don't know about you, but I think that's a boring and unhelpful name, and if I have to give things boring names, I'd much rather them be _descriptive_ boring names.
 
 A bit of google searching didn't turn up any results for how to do this unless I _A._ could have  had the prescience to know to change it before guests were added or _B._ wanted to backup all of my guests, remove them, make the changes and then restore them. If I could do A, rest assured that I would, and who's really got the time and patience for B?? So after a bit of digging, I found out that it can in fact be done on a standalone node **with guests present**, despite what I've seen and read elsewhere. And quite easily, at that. There's no need to fiddle with backing up and restoring nodes, reinstalling Proxmox or modifying any of the files or directories in `/etc/pve` either. 
@@ -74,3 +75,5 @@ I'm not totally sure what these are used for, and your mileage may vary if you c
 Oh, and it's worth mentioning that this MIGHT work for clusters too. I read somewhere that the clusters replicate a configuration database between them, so making this change on just the node in question might replicate them to all other nodes in the cluster. If someone gets brave and tries it, I hope you'll let me know!
 
 Good luck!
+
+Originally posted on _May 26, 2024_
